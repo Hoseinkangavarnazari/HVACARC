@@ -1,0 +1,18 @@
+{
+    "gatewayID": "GATEWAYID",
+    "timeStamp":"TIMESTAMP",
+    "relayStatus": [
+        {
+            "relayID":"RELAYID",
+            "requestedRelayStatus": false,
+            "SuccessStatus": false,
+            "LOG": "String of Log"
+        },
+        {
+            "relayID":"RELAYID",
+            "requestedRelayStatus": false,
+            "SuccessStatus": false,
+            "LOG": "String of Log"
+        }
+    ]
+}

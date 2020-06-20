@@ -1,0 +1,15 @@
+{
+    "name": "serversimulator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "serverSimulator.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon serverSimulator.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "mongoose": "^5.9.19"
+    }
+}

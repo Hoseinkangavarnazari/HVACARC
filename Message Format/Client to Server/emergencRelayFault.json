@@ -1,0 +1,15 @@
+{
+    "gatewayID":"GATEWAYID",
+    "timeStamp":"TIMESTAMP",
+    "LOG":"String",
+    "relayStatus": [
+        {
+            "relayID":"RELAYID",
+            "LOG": "String of Log"
+        },
+        {
+            "relayID":"RELAYID",
+            "LOG": "String of Log"
+        }
+    ]
+}

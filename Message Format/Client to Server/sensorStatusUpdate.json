@@ -1,0 +1,30 @@
+{
+    "gatewayID":"TESTID",
+     "sensors" : [
+         {
+             "sensorID":"SENSORID",
+             "T":12,
+             "H":23,
+             "timeStamp":"Timeformat"
+         },
+         {
+            "sensorID":"SENSORID",
+            "T":12,
+            "H":23,
+            "timeStamp":"Timeformat"
+        },
+        {
+            "sensorID":"SENSORID",
+            "T":12,
+            "H":23,
+            "timeStamp":"Timeformat"
+        },
+        {
+            "sensorID":"SENSORID",
+            "T":12,
+            "H":23,
+            "timeStamp":"Timeformat"
+        }
+     ]
+}
+

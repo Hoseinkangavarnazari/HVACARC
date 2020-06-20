@@ -1,0 +1,13 @@
+{
+    "gatewayID": "GATEWAYID",
+    "relayStatus": [
+        {
+            "relayID":"RELAYID",
+            "relaySTATUS": false
+        },
+        {
+            "relayID":"RELAYID2",
+            "relaySTATUS": true
+        }
+    ]
+}

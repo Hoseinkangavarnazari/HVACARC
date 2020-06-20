@@ -1,0 +1,32 @@
+
+{   "gateways":
+    [
+        {
+            "gatewayID":"TESTID",
+            "timeStamp":"timeStamp",
+            "T":{
+                "min":12,
+                "max":34,
+                "hysteresis":2
+                }
+        },
+        {
+            "gatewayID":"TESTID2",
+            "timeStamp":"timeStamp",
+            "T":{
+                "min":12,
+                "max":34,
+                "hysteresis":2
+                }
+        },
+        {
+            "gatewayID":"TESTID3",
+            "timeStamp":"timeStamp",
+            "T":{
+                "min":12,
+                "max":34,
+                "hysteresis":2
+                }
+        }
+    ]
+}       
