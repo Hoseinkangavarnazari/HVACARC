@@ -1,2 +1,2 @@
-./serverSimulation/node_modules
-./broker/node_modules
+/serverSimulation/node_modules
+/broker/node_modules
