@@ -15,7 +15,7 @@ socket.on('connect', function() { //Don't send until we're connected
                 "H": 23
             },
             {
-                "sensorID": 2,
+                "SID": 2,
                 "T": 15,
                 "H": 14
             }

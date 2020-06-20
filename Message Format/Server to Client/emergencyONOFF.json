@@ -1,12 +1,11 @@
 {
-    "gatewayID": "GATEWAYID",
-    "relayStatus": [
-        {
-            "relayID":"RELAYID",
+    "GID": "GATEWAYID",
+    "relayStatus": [{
+            "RID": "RELAYID",
             "relaySTATUS": false
         },
         {
-            "relayID":"RELAYID2",
+            "RID": "RELAYID2",
             "relaySTATUS": true
         }
     ]

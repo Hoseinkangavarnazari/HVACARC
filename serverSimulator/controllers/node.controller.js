@@ -1,58 +1,46 @@
-// var Node = require('../models/node.model');
-// var { DateTime } = require('luxon');
+ var Node = require('../models/node.model');
+ // var { DateTime } = require('luxon');
 
 
 
-// Display detail page for a specific Author.
+ // Display detail page for a specific Author.
 
-exports.statusUpdate = async(req, res) => {
-    console.log(":::", "Received an unprocessed message. [Gateway Status update EndPoint]")
-        // define schema here
-    let IP;
-    let ID;
+ exports.statusUpdate = async(req, res) => {
+     console.log(":::", "Received an unprocessed message. [Gateway Status update EndPoint]")
+         // define schema here
 
-    console.log("Gateway ID: " + req.body.GID);
-    console.log("sensors: " + req.body.sensors);
-    // //  parsing incoming data ------------------------------------------------
-    // if (req.body.IP && req.body.ID) {
-    //     IP = req.body.IP;
-    //     ID = req.body.ID;
-    //     console.log(":::", `The requested IP is ${IP} , The ID is : ${ID}`)
-    // } else {
-    //     throw new Error("::: There is something wrong with the input value.")
-    // }
-    // // ------------------------------------------------------------------------
+     let GID = req.body.GID;
+     let sensors = req.body.sensors;
 
-    // // regex check should be here
+     //  console.log(sensors[0].T)
 
-    // // check for duplicates ---------------------------------------------------
+     addingSensors = [];
+     var temp;
+     for (var i = 0; i < sensors.length; i++) {
 
-    // duplicate = await Node.find({
-    //     $or: [
-    //         { IP: IP },
-    //         { ID: ID }
-    //     ]
-    // })
+         var temp = {
+             SID: sensors[i].SID,
+             temperature: sensors[i].T,
+             humidity: sensors[i].H
+         };
+         addingSensors.push(temp);
+     }
 
-    // if (duplicate.length > 0) {
-    //     res.send("Cannot register requested Node. The Node spec is duplicated");
-    //     console.log("::: Cannot register requested Node. The Node spec is duplicated")
-    //     return
-    // }
+     console.log(addingSensors);
 
-    // // ------------------------------------------------------------------------
+     var newStatus = new Node({
+         GID: GID,
+         sensors: addingSensors
+     });
+     newStatus.sensors = addingSensors;
+     try {
+         newStatus.save();
+         res.send("::: Saved into the database.");
+         console.log(":::  Saved into the database.")
 
-    // var newNode = new Node({
-    //     IP: IP,
-    //     ID: ID,
-    // });
-    // try {
-    //     // newNode.save();
-    //     res.send("::: Saved into the database.");
-    //     console.log(":::  Saved into the database.")
+     } catch (err) {
+         res.send("::: There is something wrong with saving to DB");
+         console.log("::: There is something wrong with saving to DB", err)
+     }
 
-    // } catch (err) {
-    //     // res.send("::: There is something wrong with saving to DB");
-    //     console.log("::: There is something wrong with saving to DB")
-    // }
-}
+ }
