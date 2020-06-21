@@ -6,7 +6,7 @@ const app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-const PORT = 3000;
+const PORT = 2999;
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,11 +34,24 @@ app.use('/status', gatewayRouter);
 // --------------------------------------------------------
 
 
+
+// status receiver ----------------------------------------
+var webAPIRouter = require('./routes/webAPI.routes');
+app.use('/webapi', webAPIRouter);
+// --------------------------------------------------------
+
+
+
+
 // On localhost:3000/welcome
 app.post('/temperature', function(req, res) {
     console.log(req.body);
     res.send('test');
 });
+
+
+
+
 
 
 // start the server in the port 3000 !
