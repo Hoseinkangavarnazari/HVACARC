@@ -23,12 +23,32 @@ function updateDATA(reqG) {
                 document.getElementById(ELEMENT + 'H').innerText = sensors[i].H;
             };
 
-            document.getElementById('G1S1T').innerText = sensors[0].T;;
-
         },
         error: console.error
     });
 }
+
+
+
+function emergencyCall(reqG, command) {
+
+    console.log("Emergency Call requested");
+
+    $.ajax({
+        url: "http://localhost:2999/webapi/emergencycall",
+        dataType: 'json',
+        data: {
+            "GID": reqG,
+            command: command
+        },
+        type: "POST", // if you want to send data via the "data" property change this to "POST". This can be omitted otherwise
+        success: function(responseData) {
+            console.log("Emergency call requested");
+        },
+        error: console.error
+    });
+}
+
 
 var myVar1 = setInterval(updateDATA, 5000, 1);
 var myVar2 = setInterval(updateDATA, 5000, 2);

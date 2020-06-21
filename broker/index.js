@@ -29,6 +29,12 @@ server.on("connection", function(socket) {
             case "s":
                 // code block
                 console.log(" ** A server message received.".black.bgGreen);
+                var Emmergency = "Emmergency call for GID: " + msg.GID + " command: " + msg.command;
+                if (msg.command == "ON") {
+                    console.log(Emmergency.black.bgBlue);
+                } else {
+                    console.log(Emmergency.black.bgRed);
+                }
                 socket.sendEndMessage({ result: " successful" });
                 break;
             default:

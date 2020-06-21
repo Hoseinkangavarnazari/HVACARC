@@ -8,7 +8,7 @@ socket.connect(port, host);
 socket.on('connect', function() { //Don't send until we're connected
     socket.sendMessage({
         "status": 'g',
-        "GID": 1,
+        "GID": 2,
         "sensors": [{
                 "SID": 1,
                 "T": 12,

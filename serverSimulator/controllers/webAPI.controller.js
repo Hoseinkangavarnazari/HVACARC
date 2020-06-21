@@ -34,18 +34,18 @@ exports.emergencyCall = async(req, res) => {
     socket.connect(port, host);
     socket.on('connect', function() { //Don't send until we're connected
         socket.sendMessage({
+            "status": 's',
             "GID": req.body.GID,
+            "command": req.body.command,
             "relayStatus": [{
                 "RID": 1,
-                "relaySTATUS": req.body.status
+                "relaySTATUS": req.body.command
             }]
         });
         socket.on('message', function(message) {
             console.log('The result is: ' + message.result);
         });
     });
-
-
 }
 
 
